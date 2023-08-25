@@ -103,7 +103,7 @@ pickButtons.forEach(pick => {
 
                 endScreen.style.display = "block";
             }
-        }, 2000);
+        }, 1900);
     })
 });
 

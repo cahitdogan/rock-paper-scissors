@@ -1,0 +1,269 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --color-text: #f7d724;
+}
+
+html {
+    font-size: 62.5%; /* for 1rem=10px */
+}
+
+body {
+    background-size: 50px 50px;
+    background-color: rgb(0, 170, 238);
+    background-image: -webkit-linear-gradient(rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+    background-image: -moz-linear-gradient(rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+    background-image: -ms-linear-gradient(rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+    background-image: -o-linear-gradient(rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+    background-image: linear-gradient(rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+header {
+    width: 100%;
+}
+
+header > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 92vw;
+    max-width: 115rem;
+    height: 6.2rem;
+    transition: height 0.5s, background-color 0.5s, box-shadow 0.5s;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+}
+
+main, footer {
+    width: 92vw;
+    max-width: 115rem;
+    margin: auto;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+input {
+    background-repeat: no-repeat;
+    outline: none;
+    font-size: 1.6rem;
+    color: black;
+}
+
+input::placeholder {
+    color: gray;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+ol, ul {
+    list-style-type: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+.icon-button {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.text-icon-button { /*bunun box-sizing: property'sini değiştirmeyi düşün*/
+    display: flex; /*bu class'a dahil elementlerin görünürlüğünü değiştirmek için display: none; gibi çözümler kullanırsan bu property bozulacaktır.*/
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+}
+
+/****************************************************************************************************/
+
+#start-screen {
+    height: 100%;
+}
+
+#sound-button {
+    display: none;
+    width: 4rem;
+    height: 4rem;
+    background-image: url(../images/sound-on.svg);
+    position: fixed;
+    right: 2%;
+    top: 2%;
+}
+
+h1 {
+    font-size: clamp(5.5rem, 12vw, 10rem);
+    font-weight: 600;
+    text-align: center;
+    padding: 7rem 3rem 0 3rem;
+    color: var(--color-text);
+}
+
+#start-screen button {
+    display: block;
+    margin: auto;
+    margin-top: 20rem;
+    font-size: 4rem;
+    font-weight: 600;
+    animation: start-button-animation 1s infinite;
+}
+
+@keyframes start-button-animation {
+    0% {transform: translateY(0%);}
+    25% {transform: translateY(-20%);}
+    50% {transform: translateY(0%);}
+    75% {transform: translateY(-20%);}
+    100% {transform: translateY(0%);}
+}
+
+/****************************************************************************************************/
+
+main {
+    height: 100%;
+}
+
+main > #game-screen {
+    display: none;
+    height: 100%;
+    width: 65%;
+    flex-direction: column;
+    gap: 7%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+main > #game-screen img {
+    width: 10rem;
+}
+
+main p, main #score-board {
+    font-size: 3rem;
+}
+
+#score-board {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#score-board > span {
+    line-height: 2.8rem;
+}
+
+.user-image {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    background-image: url(../images/user.svg);
+}
+
+.computer-image {
+    display: inline-block;
+    width: 4rem;
+    height: 3rem;
+    background-image: url(../images/computer.svg);
+}
+
+#pick-buttons {
+    order: 5;
+    display: flex;
+    gap: 1.7rem;
+}
+
+#pick-buttons button {
+    width: 7rem;
+    height: 7rem;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 0.3rem;
+}
+
+#pick-buttons #rock {
+    background-image: url(../images/rock.svg);
+}
+
+#pick-buttons #paper {
+    background-image: url(../images/paper.svg);
+}
+
+#pick-buttons #scissors {
+    background-image: url(../images/scissors.svg);
+}
+
+@keyframes rightToLeft {
+    0% {transform: rotate(0deg);}
+    50% {transform: rotate(-45deg);}
+    100% {transform: rotate(0deg);}
+}
+
+@keyframes leftToRight {
+    0% {transform: rotate(0deg);}
+    50% {transform: rotate(45deg);}
+    100% {transform: rotate(0deg);}
+}
+
+/****************************************************************************************************/
+
+#end-screen {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95vw;
+    padding: 5rem 0;
+    background-color: rgb(199, 230, 248);
+    border: 2px solid #f7d724;
+    border-radius: 2rem;
+}
+
+#end-screen #result {
+    font-size: 3rem;
+    text-align: center;
+}
+
+#end-screen #result-score-board {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 3rem;
+    margin: 3rem;
+}
+
+#end-screen button {
+    display: block;
+    margin: auto;
+    font-size: 2rem;
+    font-weight: 600;
+    border: 2px solid #f7d724;
+    border-radius: 1rem;
+    padding: 0.5rem;
+}
+
+/****************************************************************************************************/
+

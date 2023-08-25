@@ -1,0 +1,20 @@
+@media screen and (width > 992px) {
+    main > #game-screen {
+        width: 88%;
+        height: 100%;
+        grid-auto-flow: column;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 8rem 25rem 10rem;
+        column-gap: 20%;
+        justify-items: center;
+        place-content: center;
+    }
+
+    #pick-buttons {
+        order: unset;
+    }
+
+    main > #game-screen img {
+        width: 100%;
+    }
+}
