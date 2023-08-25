@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--META TAG START-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Cahit Doğan">
+    <meta name="description" content="">
+
+    <!--PRELOAD-->
+
+
+    <!--TITLE-->
+    <title></title>
+
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css">
+    
+    <!--FAVICON-->
+    <link rel="icon" type="image/x-icon" href="images/"> 
+
+    <!--FONTS-->
+
+
+    <!--SCRIPTS-->
+
+
+</head>
+<audio src="music/music.mp3" preload="auto"></audio>
+<body>
+    <button id="sound-button" class="icon-button" aria-label="sound off or on"></button>
+
+    <div id="start-screen">
+        <h1>ROCK PAPER SCISSORS</h1>
+        <button>START</button>
+    </div>
+    
+
+    <main>
+        <div id="game-screen">
+            <p>YOU</p>
+            <img id="your-hand" src="images/lr_1.svg" alt="your pick">
+            <div id="pick-buttons">
+                <button id="rock" class="icon-button" aria-label="rock" data-pick-number="1"></button>
+                <button id="paper" class="icon-button" aria-label="paper" data-pick-number="2"></button>
+                <button id="scissors" class="icon-button" aria-label="scissors" data-pick-number="3"></button>
+            </div>
+            <p>COMPUTER</p>
+            <img id="computer-hand" src="images/rl_1.svg" alt="computer's pick">
+            <div id="score-board">
+                <span class="user-image icon-button"></span> <span id="your-score">0</span> : <span id="computer-score">0</span> <span class="computer-image icon-button"></span>
+            </div>
+        </div>
+    </main>
+    
+
+    <div id="end-screen">
+        <p id="result"></p>
+        <div id="result-score-board">
+            <span class="user-image icon-button"></span> <span id="your-result">0</span> : <span id="computer-result">0</span> <span class="computer-image icon-button"></span>
+        </div>
+        <button>Play Again!</button>
+    </div>
+
+
+<script src="js/start-game.js"></script>
+<script src="js/music.js"></script>
+<script src="js/game.js"></script>
+</body>
+
+</html>
