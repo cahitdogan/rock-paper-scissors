@@ -275,11 +275,12 @@ main p, main #score-board {
     gap: 12px;
     background-color:#010409;
     position: fixed;
-    top: 100px;
-    left: 0;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
     border: 1px solid #49494e;
     border-left: 0;
-    border-radius: 0px 10px 10px 0px;
+    border-radius: 10px 10px 0px 0px;
     cursor: pointer; 
     z-index: 100;
 }
