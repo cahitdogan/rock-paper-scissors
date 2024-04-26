@@ -267,3 +267,46 @@ main p, main #score-board {
 
 /****************************************************************************************************/
 
+#github {
+    padding: 7px 0 7px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    background-color:#010409;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    border: 1px solid #49494e;
+    border-left: 0;
+    border-radius: 0px 10px 10px 0px;
+    cursor: pointer; 
+    z-index: 100;
+}
+
+#github img {
+    width: 25px;
+    height: 25px;
+}
+
+#github p {
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 17px;
+    color:#E6EDF3;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+@media (width > 650px) {
+    #github {
+        padding: 7px 10px;
+    }
+
+    #github p {
+        opacity: 1;
+        width: unset;
+        height: unset;
+    }
+}
+
